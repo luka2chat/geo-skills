@@ -75,8 +75,14 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
+# ==============================================
+# Default: block unknown crawlers
+# ==============================================
+# Whitelist approach — only explicitly allowed crawlers can access.
+# Unknown bots, scrapers, and unidentified crawlers are blocked.
+
 User-agent: *
-Allow: /
+Disallow: /
 
 # Sitemap reference
 Sitemap: https://example.com/sitemap.xml
@@ -126,6 +132,10 @@ User-agent: anthropic-ai
 Disallow: /
 
 User-agent: Bytespider
+Disallow: /
+
+# Block everything else by default
+User-agent: *
 Disallow: /
 ```
 
